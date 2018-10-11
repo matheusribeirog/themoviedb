@@ -3,7 +3,7 @@ global $contador;
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://api.themoviedb.org/3/movie/popular?api_key=67c0954e550e9963ea2935f24fe3db55&language=en-US&page=1",
+  CURLOPT_URL => "http://api.themoviedb.org/3/movie/popular?api_key=YourKeyHERE",//add your the movie db key here
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
