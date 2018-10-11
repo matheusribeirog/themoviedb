@@ -1,7 +1,7 @@
 <?php
-global $contador;
+global $contador; /* Essa Variável será utilizada  para contar quantos filmes serão mostrados na tela*/
 $curl = curl_init();
-
+/*Realizando a conexão com a API*/
 curl_setopt_array($curl, array(
   CURLOPT_URL => "http://api.themoviedb.org/3/movie/popular?api_key=YourKeyHERE",//add your the movie db key here
   CURLOPT_RETURNTRANSFER => true,
@@ -20,17 +20,15 @@ curl_close($curl);
 
 if ($err) {
   echo "cURL Error #:" . $err;
-} else {
-  //echo $response;
-  
-  
+} else { /*Caso a conexão seja feita com sucesso ele roda o código abaico */
+    /* Decodifica o JSON */
 	$obj = json_decode($response);
 	
 	foreach($obj->{'results'} as $valor){	
-		print_r ("<br> <img width='150px' src='https://image.tmdb.org/t/p/w500/".$valor->{'poster_path'}."'>".'<br>');
+		print_r ("<br> <img width='150px' src='https://image.tmdb.org/t/p/w500/".$valor->{'poster_path'}."'>".'<br>'); /* Concatena a imagem para ser mostrada na tela */
 		print_r ('<br> <h1>'.$valor->{'original_title'}.'</h1>');
 		print_r ('<p>'.$valor->{'overview'}.'</p>');	
-		if ($contador >= 10){
+		if ($contador >= 20){ /*Esse contador estipula quantos filmes serão mostrados na tela*/
 			break;
 		}
 		$contador ++;
