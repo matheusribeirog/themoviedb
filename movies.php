@@ -27,7 +27,7 @@ if ($err) {
 	$obj = json_decode($response);
 	
 	foreach($obj->{'results'} as $valor){	
-		print_r ("<br> <img width='150px' style='float:right;' src='https://image.tmdb.org/t/p/w500/".$valor->{'poster_path'}."'>".'<br>');
+		print_r ("<br> <img width='150px' src='https://image.tmdb.org/t/p/w500/".$valor->{'poster_path'}."'>".'<br>');
 		print_r ('<br> <h1>'.$valor->{'original_title'}.'</h1>');
 		print_r ('<p>'.$valor->{'overview'}.'</p>');	
 		if ($contador >= 10){
