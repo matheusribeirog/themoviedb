@@ -30,7 +30,7 @@
 
 	if ($err) {
 	  echo "cURL Error #:" . $err;
-	} else { /*Caso a conexão seja feita com sucesso ele roda o código abaico */
+	} else { /*Caso a conexão seja feita com sucesso ele roda o código abaixo */
 	    /* Decodifica o JSON */
 		$obj = json_decode($response);
 
